@@ -35,8 +35,6 @@ Table of Contents:
 
 
 
-
-
 /*
 *******************************************************************************
 2. Header / .nav
@@ -44,28 +42,26 @@ Table of Contents:
 */
 
 
-
 .nav {
-    border-bottom: 1px solid #EAEAEB;
     height: 10vh;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: red;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 0 0.01em 0.9em rgb(183, 161, 145, 70%);
 }
 
 .burger-menu {
     width: 100%;
-
 }
 
 
 .menu {
-    margin: 0 1em 0 0;
+    margin: 0 2em 0 0;
     text-align: right;
     height: 100%;
 }
@@ -73,18 +69,20 @@ Table of Contents:
 .menu a {
     clear: right;
     text-decoration: none;
-    color: gray;
-    margin: 0 10px;
+    color: #707070;
+    margin: 0 0 0 20px;
     line-height: 70px;
     text-align: right;
     text-transform: uppercase;
     font-family: sans-serif;
-
+    font-size: calc(0.5em + 0.3vw);
+    letter-spacing: 0.3em;
+    height: inherit;
 }
 
 label {
     margin: 0 1em 0 0;
-    font-size: 26px;
+    font-size: calc(1.1em + 2vw);
     line-height: 70px;
     display: none;
     width: 26px;
@@ -97,16 +95,55 @@ label {
 
 .logo {
   position: fixed;
-  margin: 0 0 0 1em;
+  margin: 0 0 0 2em;
   height: inherit;
   padding: 0;
+  text-decoration: none;
+  font-size: calc(0.5em + 0.7vw);
+  display: table;
 }
 
-.fullname {
+.logo .fullname {
   margin: 0;
-  line-height: 2em;
-  word-wrap: nowrap;
+  display: table-cell;
+  vertical-align: middle;
 }
+
+/* fullname class is in the header and in the firstpage */
+.fullname {
+  font-family: Damion;
+  color: #C98686;
+}
+
+.ayoob-name {
+  color: #966B9D;
+}
+
+
+/*
+--------------
+for Animation
+--------------
+*/
+
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.12);
+  transform: scale(1.12);
+}
+
 
 
 
@@ -119,6 +156,10 @@ label {
 
 
 
+.page {
+  padding-top: 20vh;
+}
+
 
 
 
@@ -129,9 +170,6 @@ label {
 3.1. First Page / #page-one
 *******************************************************************************
 */
-
-
-
 
 
 
@@ -255,19 +293,22 @@ label {
 
 /* From 2. Header  */
 
+
     label {
         display: block;
         cursor: pointer;
         height: 100%;
     }
+
     .menu {
         text-align: center;
         width: 100%;
         display: none;
     }
+
     .menu a {
         display: block;
-        border-bottom: 1px solid #dfdfdf;
+        border: 1px solid #dfdfdf;
         margin: 0;
         text-align: center;
         background-color: whitesmoke;
@@ -276,6 +317,5 @@ label {
     #toggle:checked + .menu {
         display: block;
     }
-
 
 }

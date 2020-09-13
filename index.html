@@ -1,27 +1,32 @@
 <DOCTYPE html>
 <html>
 <head>
-    <title>Tutorial</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Ayoub Taresh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300&family=DRamion&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
 
     <header class="nav">
-        <a href=".page-one" class= "logo"><h1 class= "fullname"><span class= "ayoob-name">Ayoub</span> Taresh</h1></a>
+        <a href="#page-one" class= "logo"><h1 class= "fullname"><span class= "ayoob-name">Ayoub</span> Taresh</h1></a>
         <div class="burger-menu">
           <label for="toggle">&#9776;</label>
           <input type="checkbox" id="toggle"/>
           <nav class="menu">
-              <a href="#">About</a>
-              <a href="#">Works</a>
-              <a href="#">Credits</a>
+              <a class="hvr-grow" href="#page-two" >About</a>
+              <a class="hvr-grow" href="#page-three">Works</a>
+              <a class="hvr-grow" href="#page-four">Credits</a>
           </nav>
         </div>
     </header>
     <main id= "main">
-      <div id="page-one">
+      <div id="page-one" class="page">
         <div class= "p-one-children" id="img-div">
             <img id="image" src= "https://drive.google.com/thumbnail?id=1_9B7u5fv6zwZEPJwKGoRT0wUm3oS6fkV" style="width: 30vw;">
             <p id= "img-caption"> </p>
@@ -32,7 +37,7 @@
         </div>
       </div>
 
-      <div id="page-two">
+      <div id="page-two" class="page">
         <div id="left-info">
           <div class= "info-block">
             <div class="keys lkeys">
@@ -79,7 +84,7 @@
         </div>
       </div>
 
-      <div id="page-three">
+      <div id="page-three" class="page">
         <div id="first-grid">
           <div class="work-key">
             Musical Instrument
@@ -113,7 +118,7 @@
         </div>
       </div>
 
-      <div id="page-four">
+      <div id="page-four" class="page">
         <div class="yellow-bg"></div>
         <img src="https://drive.google.com/thumbnail?id=1O6GdOZYFqRdUPYaojFydU1enQBhE14pG">
         <div class="qoute">
