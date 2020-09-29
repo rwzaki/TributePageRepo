@@ -11,8 +11,8 @@ Table of Contents:
           3.1.1. Image & its caption / #img-div
           3.1.2. Intro Name / #name-div
         3.2. Second Page / #page-two
-          3.2.1. Left Information / #left-Info
-          3.2.2. Right Information / #right-Info
+          3.2.1. personal Information / #personal-info
+          3.2.2. Biography / #bio-info
         3.3. Third Page / #page-three
             3.3.1. First grid / #first-grid
             3.3.2. Second grid / #second-grid
@@ -32,6 +32,10 @@ Table of Contents:
 1. Body
 *******************************************************************************
 */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -118,7 +122,7 @@ label {
 }
 
 .ayoob-name {
-  color: #966B9D;
+  color: #855c8c;
 }
 
 
@@ -160,17 +164,12 @@ main {
   padding-left: 8vw;
   padding-right: 8vw;
   background-color: #FFF4EC;
-
+  overflow: hidden;
 }
 
 .page {
   padding-top: 20vh;
-
 }
-
-
-
-
 
 
 /*
@@ -239,7 +238,11 @@ main {
   margin: 0.2em 0 0 0;
 }
 
-
+hr.line {
+  display: none;
+  border: 1px #f2b880 solid;
+  margin-bottom: 2em;
+}
 
 /*
 *******************************************************************************
@@ -247,27 +250,101 @@ main {
 *******************************************************************************
 */
 
+#page-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 5vh;
+}
 
+.keys {
+  text-transform: uppercase;
+  font-size: calc(0.7em + 0.2vw);
+  font-family: Rubik, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
 
+.values {
+  font-size: calc(0.6em + 0.5vw);
+  font-family: Rubik, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
 
 
 /*
 *******************************************************************************
-3.2.1. Left Information / #left-Info
+3.2.1. personal Information / #personal-info
 *******************************************************************************
 */
 
+#personal-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3em;
+}
 
+.info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.info-block > img {
+  margin: 0.8em;
+  width: calc(2em + 2vw);
+}
 
+.info-block > div {
+  margin: 0.3em;
+}
+
+.pkeys, .pval {
+  box-sizing: border-box;
+  text-align: center;
+  width: calc(10em + 5vw);
+  border-radius: 2em;
+  color: #855c8c;
+  padding: 0.1em;
+}
+
+.pkeys {
+  color: #b69ab2;
+}
+
+.pval {
+  white-space: nowrap;
+}
 
 /*
 *******************************************************************************
-3.2.2. Right Information / #right-Info
+3.2.2. Biography / #bio-info
 *******************************************************************************
 */
 
+#bio-info {
+  background-color: #855c8c;
+  width: 100vw;
+  padding: 3em 15vw 3em 15vw;
+  box-sizing: border-box;
+}
 
+.bkeys {
+  color: #cdb6c4;
+  margin-bottom: 1.5em;
+}
+
+.bval {
+  color:  #fff4ec;
+  line-height: 2em;
+}
 
 
 
@@ -382,9 +459,72 @@ main {
     font-size: calc(2rem + 2vw);
   }
 
+  hr.line {
+    display: block;
+
+  }
 
 
+  /* From 3.2.1. personal Information */
 
 
+  #personal-info {
+    display: grid;
+    grid-template-areas:
+    "Nationality "
+    "DoB"
+    "Occupation";
+
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  .nationality {
+    grid-area: Nationality;
+  }
+
+  .dob {
+    grid-area: DoB;
+  }
+
+  .occupation {
+    grid-area: Occupation;
+  }
+
+  .info-block {
+    display: grid;
+    grid-template-areas:
+    "Icon Key"
+    "Icon Value";
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0em 1em 0em;
+  }
+
+  .info-icon {
+    grid-area: Icon;
+  }
+
+  .pkeys {
+    grid-area: Key;
+    text-align: left;
+  }
+
+  .pval {
+    grid-area: Value;
+    text-align: left;
+  }
+
+  .info-block > img {
+    margin:0.1em 2.2em 0.1em 2.2em;
+  }
+
+
+  .info-block > div {
+    margin: 0.3em;
+  }
 
 }
