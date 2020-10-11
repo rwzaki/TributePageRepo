@@ -4,22 +4,20 @@
 
 Table of Contents:
 
-1. Body
-    2. Header / .nav
-    3. Main / #main
-        3.1. First Page / #page-one
-          3.1.1. Image & its caption / #img-div
-          3.1.2. Intro Name / #name-div
-        3.2. Second Page / #page-two
-          3.2.1. personal Information / #personal-info
-          3.2.2. Biography / #bio-info
-        3.3. Third Page / #page-three
-            3.3.1. First grid / #first-grid
-            3.3.2. Second grid / #second-grid
-        3.4. Forth Page / #page-four
-
-    4. Footer / #footer
-    5. Media Queries
+      1. Body
+      2. Header / .nav
+      3. Main / #main
+          3.1. First Page / #page-one
+            3.1.1. Image & its caption / #img-div
+            3.1.2. Intro Name / #name-div
+          3.2. Second Page / #page-two
+            3.2.1. personal Information / #personal-info
+            3.2.2. Biography / #bio-info
+          3.3. Third Page / #page-three
+          3.4. Forth Page / #page-four
+      4. Footer / #footer
+      5. Animations
+      6. Media Queries
   */
 
 
@@ -126,33 +124,6 @@ label {
 }
 
 
-/*
---------------
-for Animation
---------------
-*/
-
-
-/* Grow */
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.12);
-  transform: scale(1.12);
-}
-
-
-
-
 
 /*
 *******************************************************************************
@@ -197,16 +168,20 @@ main {
 
 #img-div{
   margin: 1em;
+      width: auto;
+    height: auto;
+    max-width: 900px;
 }
+
 
 #image {
-  width: calc(7em + 20vw);
+      width: calc(7em + 20vw);
+    height: auto;
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-
-
-
-
-
 
 
 /*
@@ -354,27 +329,67 @@ hr.line {
 *******************************************************************************
 */
 
+#page-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 
+#first-grid, #second-grid, #third-grid {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
 
 
-/*
-*******************************************************************************
-3.3.1. First grid / #first-grid
-*******************************************************************************
-*/
+.work-key, .work-value {
+  text-align: center;
+}
+
+.work-key {
+  background-color: #f2b880;
+    line-height: 2em;
+    height: 2em;
+    border-radius: 1em;
+    color: #855c8c;
+    font-weight: bold;
+    font-size: calc(0.5em + 0.3vw);
+}
+
+.work-value {
+  background-color: #855c8c;
+      color: white;
+      height: 3.5em;
+      line-height: 3.5em;
+      align-self: start;
+}
+
+.work-column {
+  width: calc(7em + 10vw);
+      height: calc(8.75em + 12.5vw);
+      overflow: hidden;
+      background-color: #f2b880;
+      border: 6px #855c8c solid;
+      text-align: center;
+      box-sizing: border-box;
+}
 
 
+.work-column img{
+  /* I made it inline-block, so that the text-align property of this imaage's parent will work on it */
+  display: inline-block;
+  height: calc(6em + 12.5vw);
+  /* The vertical align is working because of the helper */
+  vertical-align: middle;
 
+}
 
-/*
-*******************************************************************************
-3.3.2. Second grid / #second-grid
-*******************************************************************************
-*/
-
-
-
+.helper {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
 
 
 
@@ -384,11 +399,72 @@ hr.line {
 *******************************************************************************
 */
 
+#page-four {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: start;
+  margin: 0 -8vw 0 -8vw;
+}
 
 
 
+.left-qoute-img {
+  position: relative;
+  width: 40%;
+  display: block;
+}
 
+.yellow-bg {
+  background-color: #f2b880;
+  position: relative;
+  display: block;
+  height: 100%;
+  position: relative;
+}
 
+.qoute-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  height: calc(8.75em + 12.5vw);
+}
+
+.qoute {
+  background-color: #855c8c;
+  padding: 1em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  box-shadow: -1.5em 0px 0px 0px #c98686;
+  position: relative;
+}
+
+.qoute span, .qoute p {
+  color: white;
+  font-family: DRamion;
+}
+
+.qoute p {
+  font-size: calc(0.6em + 1vw);
+  padding: 0.5em;
+}
+
+.open-qoute, .close-qoute {
+  font-size: 4em;
+  line-height: 0.6em;
+}
+
+.open-qoute {
+  padding-top: 0.3em;
+}
+
+.close-qoute {
+  text-align: right;
+}
 
 
 /*
@@ -397,17 +473,101 @@ hr.line {
 *******************************************************************************
 */
 
+footer {
+  margin: 1em 2em 1em 2em;
+}
 
+footer p {
+  font-family: Rubik, sans-serif;
+  font-size: calc(0.7em + 0.2vw);
+  font-weight: normal;
+  text-align: center;
+  color: #855c8c;
+}
 
+footer p > a {
+  text-decoration: none;
+  color:#c98686;
+  text-transform: uppercase;
+}
 
-
-
-
+.author {
+  background-color: #f2b880;
+  color: #855c8c;
+  padding: 0.3em;
+}
 
 
 /*
 *******************************************************************************
-5. Media Queries
+5. Animation
+*******************************************************************************
+*/
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.12);
+  transform: scale(1.12);
+}
+
+
+/* Sweep to Right */
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+    padding: 0.2em;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #c98686;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+/*
+*******************************************************************************
+6. Media Queries
 *******************************************************************************
 */
 
@@ -421,6 +581,11 @@ hr.line {
         display: block;
         cursor: pointer;
         height: 100%;
+        font-size: calc(1.1em + 3vw);
+    }
+
+    .logo {
+        font-size: calc(0.5em + 1.5vw);
     }
 
     .menu {
@@ -428,6 +593,7 @@ hr.line {
         width: 100%;
         display: none;
         z-index: 10;
+
     }
 
     .menu a {
@@ -436,6 +602,7 @@ hr.line {
         margin: 0;
         text-align: center;
         background-color: whitesmoke;
+        font-size: calc(0.5em + 0.9vw);
     }
 
     #toggle:checked + .menu {
@@ -455,8 +622,12 @@ hr.line {
     margin: 0;
   }
 
+  #name-div p {
+    font-size: calc(0.5em + 1.2vw);
+  }
+
   #title {
-    font-size: calc(2rem + 2vw);
+    font-size: calc(2rem + 5.5vw);
   }
 
   hr.line {
@@ -479,6 +650,14 @@ hr.line {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 2em;
+  }
+
+  .keys {
+      font-size: calc(0.7em + 1vw);
+  }
+
+  .values {
+    font-size: calc(0.6em + 1.8vw);
   }
 
   .nationality {
@@ -527,4 +706,126 @@ hr.line {
     margin: 0.3em;
   }
 
+  /* From 3.2. Second Page */
+
+  #page-two {
+    padding: 25vh;
+  }
+
+/* From 3.3. Third Page */
+
+  #page-three {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .work-column {
+    width: calc(7em + 25vw);
+    height: calc(8.75em + 30vw);
+  }
+
+  .work-key {
+      line-height: 2.5em;
+      height: 2.5em;
+      align-self: end;
+      border-radius: 1em 1em 0 0;
+  }
+
+  .work-column img{
+    height: calc(6em + 27vw);
+    /* The vertical align is working because of the helper */
+    vertical-align: middle;
+  }
+
+  #first-grid, #second-grid, #third-grid {
+    grid-template-rows: 1fr 4fr 1fr;
+  }
+
+/* From 3.4. Forth Page */
+
+  #page-four {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10em 0.5em 0 0.5em;
+    padding-bottom: 2em;
+  }
+
+  .left-qoute-img {
+    width: 100%;
+
+  }
+
+  .yellow-bg {
+    background-color: #f2b880;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20vh;
+  }
+
+
+  .qoute-img {
+    position: absolute;
+    margin: auto;
+    z-index: 4;
+  }
+
+
+  .qoute {
+
+    /* width: calc(8.75em + 10vw); */
+    box-shadow: 0em -2em 0px 0px #c98686;
+  }
+
+  .qoute span, .qoute p {
+    color: white;
+    font-family: DRamion;
+  }
+
+  .qoute p {
+    font-size: calc(0.7em + 2vw);
+    padding: 0.5em;
+  }
+
+  .open-qoute, .close-qoute {
+    font-size: 4em;
+    line-height: 0.3em;
+  }
+
+  .open-qoute {
+    padding-top: 0.2em;
+  }
+
+  .close-qoute {
+    text-align: right;
+  }
+
+
+  /* From Footer */
+
+  footer p {
+    font-size: calc(0.7em + 0.5vw);
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+ @media screen and (orientation:landscape) {
+   .menu a {
+     height: 100%;
+     line-height: 500%;
+   }
+
+   footer p {
+     font-size: calc(0.5em + 0.2vw);
+   }
+ }
