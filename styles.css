@@ -47,7 +47,7 @@ body {
 
 
 .nav {
-    height: 10vh;
+    height: 5em;
     position: fixed;
     top: 0;
     left: 0;
@@ -57,6 +57,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0 0.01em 0.9em rgb(183, 161, 145, 70%);
+    z-index: 10;
 }
 
 .burger-menu {
@@ -82,6 +83,8 @@ body {
     font-size: calc(0.5em + 0.3vw);
     letter-spacing: 0.3em;
     height: inherit;
+    box-sizing: border-box;
+    padding: 1em 0;
 }
 
 label {
@@ -91,6 +94,7 @@ label {
     display: none;
     width: 26px;
     float: right;
+    color: #855c8c;
 }
 
 #toggle {
@@ -307,7 +311,7 @@ hr.line {
 #bio-info {
   background-color: #855c8c;
   width: 100vw;
-  padding: 3em 15vw 3em 15vw;
+  padding: 3em 15vw;
   box-sizing: border-box;
 }
 
@@ -348,13 +352,11 @@ hr.line {
 }
 
 .work-key {
-  background-color: #f2b880;
-    line-height: 2em;
-    height: 2em;
-    border-radius: 1em;
+    height: 3em;
     color: #855c8c;
     font-weight: bold;
-    font-size: calc(0.5em + 0.3vw);
+    font-size: calc(0.6em + 0.3vw);
+    align-self: end;
 }
 
 .work-value {
@@ -363,6 +365,7 @@ hr.line {
       height: 3.5em;
       line-height: 3.5em;
       align-self: start;
+      border-radius: 0 0 3em 0;
 }
 
 .work-column {
@@ -373,6 +376,7 @@ hr.line {
       border: 6px #855c8c solid;
       text-align: center;
       box-sizing: border-box;
+      border-radius: 3em 0 0 0;
 }
 
 
@@ -382,7 +386,7 @@ hr.line {
   height: calc(6em + 12.5vw);
   /* The vertical align is working because of the helper */
   vertical-align: middle;
-
+  border-radius: 2.5em 0 0 0;
 }
 
 .helper {
@@ -486,8 +490,7 @@ footer p {
 }
 
 footer p > a {
-  text-decoration: none;
-  color:#c98686;
+  color:#4d69d2;
   text-transform: uppercase;
 }
 
@@ -576,6 +579,9 @@ footer p > a {
 
 /* From 2. Header  */
 
+    .nav {
+      height: 4em;
+    }
 
     label {
         display: block;
@@ -603,6 +609,8 @@ footer p > a {
         text-align: center;
         background-color: whitesmoke;
         font-size: calc(0.5em + 0.9vw);
+        box-sizing: content-box;
+        padding: 0;
     }
 
     #toggle:checked + .menu {
@@ -653,11 +661,11 @@ footer p > a {
   }
 
   .keys {
-      font-size: calc(0.7em + 1vw);
+      font-size: calc(0.6em + 1vw);
   }
 
   .values {
-    font-size: calc(0.6em + 1.8vw);
+    font-size: calc(0.6em + 1.4vw);
   }
 
   .nationality {
@@ -709,7 +717,7 @@ footer p > a {
   /* From 3.2. Second Page */
 
   #page-two {
-    padding: 25vh;
+    padding: 17em 8em;
   }
 
 /* From 3.3. Third Page */
@@ -724,21 +732,16 @@ footer p > a {
     height: calc(8.75em + 30vw);
   }
 
-  .work-key {
-      line-height: 2.5em;
-      height: 2.5em;
-      align-self: end;
-      border-radius: 1em 1em 0 0;
-  }
 
   .work-column img{
-    height: calc(6em + 27vw);
+    height: calc(7em + 27vw);
     /* The vertical align is working because of the helper */
     vertical-align: middle;
   }
 
   #first-grid, #second-grid, #third-grid {
     grid-template-rows: 1fr 4fr 1fr;
+    padding-top: 3em;
   }
 
 /* From 3.4. Forth Page */
