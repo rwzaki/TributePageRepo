@@ -1,6 +1,6 @@
 # Tribute Page
 
-![Project Preview](/path/to/preview/image.png)
+![Project Preview](/TributePageScreenshot.png)
 
 This repository contains the source code for a tribute page dedicated to Ayoob Tarish, a renowned traditional Yemeni singer. The page was created as part of the Responsive Web Design course on FreeCodeCamp and serves as a showcase of my designing skills. It demonstrates proficiency in HTML and CSS, and pays homage to the legacy of Ayoob Tarish.
 
